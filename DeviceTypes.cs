@@ -50,8 +50,7 @@ public class WirelessMicrophone : TeachingDevice
         BatteryLevel = battery;
         SignalQuality = signal;
     }
-
-    public override bool IsReadyForUse() => Status == DeviceStatus.Available && (BatteryLevel >= 30 || SignalQuality >= 40);
-    
+    public override bool IsReadyForUse() 
+        => Status == DeviceStatus.Available && (BatteryLevel >= 30 && SignalQuality >= 40);
     public override double GetDefaultPriorityScore() => (BatteryLevel + SignalQuality) / 2.0;
 }
