@@ -21,7 +21,7 @@ public class HighestPriorityStrategy<T> : ISelectionStrategy<T>
     {
         if (candidates == null || !candidates.Any())
             throw new NoSuitableItemException();
-        return candidates.OrderBy(_scoreSelector).First();
+        return candidates.OrderByDescending(_scoreSelector).First();
     }
 }
 
@@ -31,7 +31,6 @@ public class FirstAvailableStrategy<T> : ISelectionStrategy<T>
     {
         if (candidates == null || !candidates.Any())
             throw new NoSuitableItemException();
-
         return candidates.First();
     }
 }
