@@ -30,6 +30,7 @@ public abstract class TeachingDevice : IIdentifiable
         {
             throw new DeviceNotReadyException(Id, Status);
         }
+        Status = DeviceStatus.Borrowed;
     }
 
     public void Return()
